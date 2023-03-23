@@ -26,8 +26,6 @@ router.get('/:id/edit', (req, res) => {
 })
 
 router.put('/:id', (req, res) => {
-  console.log(req.body)
-  // { name: '早餐', date: '2023-03-21', category: 'food', amount: '100' }
   const id = req.params.id
   const editData = req.body
   return Record.findById(id)
@@ -35,6 +33,13 @@ router.put('/:id', (req, res) => {
             record = Object.assign(record, editData)
             return record.save()
            })
+           .then(() => res.redirect('/'))
+           .catch(error => console.log(error))
+})
+
+router.delete('/:id', (req, res) => {
+  const id = req.params.id
+  return Record.deleteOne({ _id: id })
            .then(() => res.redirect('/'))
            .catch(error => console.log(error))
 })
