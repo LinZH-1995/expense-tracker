@@ -10,13 +10,13 @@
   <div class="category-filter d-flex justify-content-center" style="width: 35%;margin: 1rem auto;">
     <form class="w-100" action="/search" method="GET">
       <div class="dropdown w-100">
-        <select name="category-select" id="category-select" class="w-100" onchange="submit()">
-          <option value="--">類別</option>
-          <option value="house">家居物業</option>
-          <option value="vehicle">交通出行</option>
-          <option value="entertainment">休閒娛樂</option>
-          <option value="food">餐飲食品</option>
-          <option value="other">其他</option>
+        <select name="categorySelect" id="categorySelect" class="w-100" onchange="submit()">
+          <option value="--" {{#compare key '===' '--'}}selected{{/compare}}>類別</option>
+          <option value="house" {{#compare key '===' 'house'}}selected{{/compare}}>家居物業</option>
+          <option value="vehicle" {{#compare key '===' 'vehicle'}}selected{{/compare}}>交通出行</option>
+          <option value="entertainment" {{#compare key '===' 'entertainment'}}selected{{/compare}}>休閒娛樂</option>
+          <option value="food" {{#compare key '===' 'food'}}selected{{/compare}}>餐飲食品</option>
+          <option value="other" {{#compare key '===' 'other'}}selected{{/compare}}>其他</option>
         </select>
       </div>
     </form>
