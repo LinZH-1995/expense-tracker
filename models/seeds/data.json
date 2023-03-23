@@ -2,43 +2,38 @@
   "results": [
     {
       "name": "早餐",
-      "category": "餐飲食品",
+      "category": "food",
       "date": "2023/03/22",
       "amount": 100,
-      "icon": "fa-solid fa-utensils",
-      "icon_name": "food"
+      "icon": "fa-solid fa-utensils"
     },
     {
       "name": "汽車保養費",
-      "category": "交通出行",
+      "category": "vehicle",
       "date": "2023/01/12",
       "amount": 3000,
-      "icon": "fa-solid fa-van-shuttle",
-      "icon_name": "vehicle"
+      "icon": "fa-solid fa-van-shuttle"
     },
     {
       "name": "手機費",
-      "category": "其他",
+      "category": "other",
       "date": "2023/02/20",
       "amount": 799,
-      "icon": "fa-solid fa-pen",
-      "icon_name": "other"
+      "icon": "fa-solid fa-pen"
     },
     {
       "name": "買衣服",
-      "category": "休閒娛樂",
+      "category": "entertainment",
       "date": "2023/01/31",
       "amount": 120,
-      "icon": "fa-solid fa-face-grin-beam",
-      "icon_name": "entertainment"
+      "icon": "fa-solid fa-face-grin-beam"
     },
     {
       "name": "買垃圾袋",
-      "category": "家居物業 ",
+      "category": "house ",
       "date": "2023/03/01",
       "amount": 89,
-      "icon": "fa-solid fa-house",
-      "icon_name": "house"
+      "icon": "fa-solid fa-house"
     }
   ]
 }

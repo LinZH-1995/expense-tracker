@@ -6,8 +6,8 @@ db.once('open', () => {
   const collectionArray = []
 
   dataList.results.forEach(result => {
-    const { icon, icon_name } = result
-    collectionArray.push({ icon, name: icon_name })
+    const { category, icon } = result
+    collectionArray.push({ name: category, icon })
   })
 
   Category.insertMany(collectionArray)
