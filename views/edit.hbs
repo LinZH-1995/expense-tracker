@@ -1,0 +1,52 @@
+<div class="container d-flex justify-content-center w-100 vh-100" style="background-color: white;">
+  <form id="form" action="/records/{{record._id}}?_method=PUT" method="POST" class="w-25 mt-5" novalidate>
+
+    <div class="title mb-4 row fw-bold">
+      <label for="staticEmail" class="col-4 col-form-label">*為必填欄位</label>
+      <div class="col-6 ms-4">
+        <input type="text" readonly class="form-control-plaintext " id="staticEmail" value="請輸入你的支出">
+      </div>
+    </div>
+
+    <div class="name row mb-4">
+      <label for="name" class="col-4 col-form-label fs-4">名稱* ：</label>
+      <div class="col-8">
+        <input type="text" class="form-control mt-2" id="name" name="name" placeholder="早餐/午餐..." value="{{record.name}}" required>
+      </div>
+    </div>
+
+    <div class="date row mb-4">
+      <label for="date" class="col-4 col-form-label fs-4">日期* ：</label>
+      <div class="col-8">
+        <input type="date" class="form-control mt-2" id="date" name="date" value="{{record.date}}" placeholder="早餐/午餐..." required>
+      </div>
+    </div>
+
+    <div class="category row mb-4">
+      <label for="category" class="col-4 col-form-label fs-4">類別* ：</label>
+      <div class="col-8">
+        <select class="form-select mt-2" name="category" id="category" aria-label="select" required>
+          <option value="--" {{#compare record.category '===' '--'}}selected{{/compare}}>請選擇一種支出類別</option>
+          <option value="house" {{#compare record.category '===' 'house'}}selected{{/compare}}>家居物業</option>
+          <option value="vehicle" {{#compare record.category '===' 'vehicle'}}selected{{/compare}}>交通出行</option>
+          <option value="entertainment" {{#compare record.category '===' 'entertainment'}}selected{{/compare}}>休閒娛樂</option>
+          <option value="food" {{#compare record.category '===' 'food'}}selected{{/compare}}>餐飲食品</option>
+          <option value="other" {{#compare record.category '===' 'other'}}selected{{/compare}}>其他</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="amount row mb-5">
+      <label for="amount" class="col-4 col-form-label fs-4">金額* ：</label>
+      <div class="col-8">
+        <input type="number" class="form-control mt-2" id="amount" name="amount" placeholder="1000..." min="0" value="{{record.amount}}"
+          inputmode="numeric" required>
+      </div>
+    </div>
+
+    <div class="button row mb-4">
+      <button type="submit" class="btn btn-success">確定修改</button>
+    </div>
+
+  </form>
+</div>
