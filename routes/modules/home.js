@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
                 .then(categorys => {
                   let totalAmount = 0
                   records.forEach(record => {
-                    const { icon } = categorys.find(category => category.name === record.category)
+                    const { icon }  = categorys.find(category => category.name === record.category) || '--'
                     record.icon = icon
                     record.date = record.date.toISOString().slice(0, 10)
                     totalAmount += record.amount

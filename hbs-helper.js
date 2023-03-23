@@ -1,4 +1,4 @@
-const Handlebars = require('hanlebars')
+const Handlebars = require('handlebars')
 
 Handlebars.registerHelper('compare', function (left, operator, right, options) {
   if (arguments.length < 3) {

@@ -47,7 +47,11 @@
           <td>
             <div class="info-wrapper d-flex align-items-center">
               <div class="info-icon text-center me-1" style="width: 11%;">
+                {{#compare this.category '===' '--'}}
+                <i class="fa-solid fa-x text-info" style="font-size: 2.1rem;"></i>
+                {{else}}
                 <i class="{{this.icon}} text-info" style="font-size: 2.1rem;"></i>
+                {{/compare}}
               </div>
 
               <div class="info-title" style="width: 38%;">

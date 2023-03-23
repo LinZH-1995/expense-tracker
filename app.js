@@ -8,7 +8,7 @@ require('./config/mongoose.js')
 const app = express()
 const port = 3000
 
-app.engine('hbs', exphbs.engine({ defaultLayout: 'main', extname: '.hbs' }))
+app.engine('hbs', exphbs.engine({ defaultLayout: 'main', extname: '.hbs', helpers: require('./hbs-helper.js') }))
 app.set('view engine', 'hbs')
 
 app.use(express.static('public'))
