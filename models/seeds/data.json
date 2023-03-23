@@ -6,7 +6,7 @@
       "date": "2023/03/22",
       "amount": 100,
       "icon": "fa-solid fa-utensils",
-      "icon_name": "utensils"
+      "icon_name": "food"
     },
     {
       "name": "汽車保養費",
@@ -14,7 +14,7 @@
       "date": "2023/01/12",
       "amount": 3000,
       "icon": "fa-solid fa-van-shuttle",
-      "icon_name": "van-shuttle"
+      "icon_name": "vehicle"
     },
     {
       "name": "手機費",
@@ -22,7 +22,7 @@
       "date": "2023/02/20",
       "amount": 799,
       "icon": "fa-solid fa-pen",
-      "icon_name": "pen"
+      "icon_name": "other"
     },
     {
       "name": "買衣服",
@@ -30,7 +30,7 @@
       "date": "2023/01/31",
       "amount": 120,
       "icon": "fa-solid fa-face-grin-beam",
-      "icon_name": "face-grin-beam"
+      "icon_name": "entertainment"
     },
     {
       "name": "買垃圾袋",
