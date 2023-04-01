@@ -1,44 +1,49 @@
-<div class="row">
-  <div class="col-md-4 m-auto mt-5">
-    <div class="card card-body">
-      <h1 class="text-center mt-3 mb-3">Register</h1>
-      <small class="mb-2">必填欄位*</small>
-      <form id="form" action="/users/register" method="POST" novalidate>
-        <div class="form-group mb-3" style="position: relative;">
-          <label for="name" class="mb-2 fs-5">Name*</label>
-          <input type="text" id="name" name="name" class="form-control" placeholder="Enter Name" required>
-          <div class="invalid-feedback" style="position: absolute; top: 1px; left: 75px">
-            必填欄位
+<div class="container">
+  <div class="row">
+    <div class="col-md-5 m-auto mt-5">
+      <div class="card card-body">
+        <h1 class="text-center mt-3 mb-3">Register</h1>
+        {{> message}}
+        <small class="mb-2">必填欄位*</small>
+        <form id="form" action="/users/register" method="POST" novalidate>
+          <div class="form-group mb-3" style="position: relative;">
+            <label for="name" class="mb-2 fs-5">Name*</label>
+            <input type="text" id="name" name="name" class="form-control" placeholder="Enter Name" required>
+            <div class="invalid-feedback" style="position: absolute; top: 1px; left: 75px">
+              必填欄位
+            </div>
           </div>
-        </div>
-        <div class="form-group mb-3" style="position: relative;">
-          <label for="email" class="mb-2 fs-5">Email*</label>
-          <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email" required>
-          <div class="invalid-feedback" style="position: absolute; top: 1px; left: 73px">
-            必填欄位
+          <div class="form-group mb-3" style="position: relative;">
+            <label for="email" class="mb-2 fs-5">Email*</label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email" required>
+            <div class="invalid-feedback" style="position: absolute; top: 1px; left: 73px">
+              必填欄位
+            </div>
           </div>
-        </div>
-        <div class="form-group mb-4" style="position: relative;">
-          <label for="password" class="mb-2 fs-5">Password*</label>
-          <input type="password" id="password" name="password" class="form-control" placeholder="Enter Password" required>
-          <div class="invalid-feedback" style="position: absolute; top: 1px; left: 108px">
-            必填欄位
+          <div class="form-group mb-4" style="position: relative;">
+            <label for="password" class="mb-2 fs-5">Password*</label>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Enter Password"
+              required>
+            <div class="invalid-feedback" style="position: absolute; top: 1px; left: 108px">
+              必填欄位
+            </div>
           </div>
-        </div>
-        <div class="form-group mb-4" style="position: relative;">
-          <label for="confirmPassword" class="mb-2 fs-5">Confirm Password*</label>
-          <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" placeholder="Confirm Password" required>
-          <div class="invalid-feedback" style="position: absolute; top: 1px; left: 188px">
-            必填欄位
+          <div class="form-group mb-4" style="position: relative;">
+            <label for="confirmPassword" class="mb-2 fs-5">Confirm Password*</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" class="form-control"
+              placeholder="Confirm Password" required>
+            <div class="invalid-feedback" style="position: absolute; top: 1px; left: 188px">
+              必填欄位
+            </div>
           </div>
-        </div>
-        <div class="d-grid gap-2">
-          <button class="btn btn-secondary mb-2" type="submit">Register</button>
-        </div>
-      </form>
-      <p class="lead mt-4">
-        No Account? <a href="/users/login" class="text-decoration-none">Login</a>
-      </p>
+          <div class="d-grid gap-2">
+            <button class="btn btn-secondary mb-2" type="submit">Register</button>
+          </div>
+        </form>
+        <p class="lead mt-4">
+          No Account? <a href="/users/login" class="text-decoration-none">Login</a>
+        </p>
+      </div>
     </div>
   </div>
 </div>
