@@ -5,23 +5,32 @@ const recordSchema = new Schema({
   name: {
     type: String,
     trim: true,
-    require: true
+    required: true
   },
 
   category: {
-    type: String,
+    type: Schema.Types.String,
+    ref: 'Category',
     trim: true,
-    require: true
+    index: true,
+    required: true
   },
 
   date: {
     type: Date,
-    require: true
+    required: true
   },
 
   amount: {
     type: Number,
-    require: true
+    required: true
+  },
+
+  userId: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    index: true,
+    required: true
   }
 })
 

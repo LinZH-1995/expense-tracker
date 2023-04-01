@@ -5,12 +5,12 @@ const categorySchema = new Schema({
   name: {
     type: String,
     trim: true,
-    require: true
+    required: true
   },
 
   icon: {
     type: String,
-    require: true
+    required: true
   }
 })
 
