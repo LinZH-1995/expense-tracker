@@ -11,7 +11,7 @@
     <form class="w-100 d-flex" action="/search" method="GET">
       <div class="dropdown w-50 me-3">
         <select name="categorySelect" id="categorySelect" class="w-100" onchange="submit()">
-          <option value="--" {{#compare categorySelect '===' '--' }}selected{{/compare}}>類別</option>
+          <option value="" {{#compare categorySelect '===' '' }}selected{{/compare}}>類別</option>
           <option value="house" {{#compare categorySelect '===' 'house' }}selected{{/compare}}>家居物業</option>
           <option value="vehicle" {{#compare categorySelect '===' 'vehicle' }}selected{{/compare}}>交通出行</option>
           <option value="entertainment" {{#compare categorySelect '===' 'entertainment' }}selected{{/compare}}>休閒娛樂</option>
@@ -20,22 +20,8 @@
         </select>
       </div>
 
-      <div class="dropdown w-50">
-        <select name="monthSelect" id="monthSelect" class="w-100" onchange="submit()">
-          <option value="--" {{#compare monthSelect '===' '--' }}selected{{/compare}}>月份</option>
-          <option value="1" {{#compare monthSelect '===' '1' }}selected{{/compare}}>1月</option>
-          <option value="2" {{#compare monthSelect '===' '2' }}selected{{/compare}}>2月</option>
-          <option value="3" {{#compare monthSelect '===' '3' }}selected{{/compare}}>3月</option>
-          <option value="4" {{#compare monthSelect '===' '4' }}selected{{/compare}}>4月</option>
-          <option value="5" {{#compare monthSelect '===' '5' }}selected{{/compare}}>5月</option>
-          <option value="6" {{#compare monthSelect '===' '6' }}selected{{/compare}}>6月</option>
-          <option value="7" {{#compare monthSelect '===' '7' }}selected{{/compare}}>7月</option>
-          <option value="8" {{#compare monthSelect '===' '8' }}selected{{/compare}}>8月</option>
-          <option value="9" {{#compare monthSelect '===' '9' }}selected{{/compare}}>9月</option>
-          <option value="10" {{#compare monthSelect '===' '10' }}selected{{/compare}}>10月</option>
-          <option value="11" {{#compare monthSelect '===' '11' }}selected{{/compare}}>11月</option>
-          <option value="12" {{#compare monthSelect '===' '12' }}selected{{/compare}}>12月</option>
-        </select>
+      <div class="w-50">
+        <input type="month" name="monthSelect" id="monthSelect" class="w-100" onchange="submit()" value="{{monthSelect}}">
       </div>
     </form>
   </div>
