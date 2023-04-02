@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
+
 const db = require('../../config/mongoose.js')
 const Category = require('../category.js')
 const dataList = require('./data.json')
@@ -11,8 +15,7 @@ db.once('open', () => {
   })
 
   Category.insertMany(collectionArray)
-    .then(() => console.log('Category seed create OK !'))
-    .then(() => db.close())
-    .then(() => console.log('MongoDB Connection closed !'))
+    .then(() => console.log('Category seeds already import ！'))
+    .then(() => process.exit())
     .catch(error => console.error(error))
 })

@@ -9,10 +9,7 @@ const recordSchema = new Schema({
   },
 
   category: {
-    type: Schema.Types.String,
-    ref: 'Category',
-    trim: true,
-    index: true,
+    type: String,
     required: true
   },
 

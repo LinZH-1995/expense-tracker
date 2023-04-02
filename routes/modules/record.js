@@ -5,18 +5,21 @@ const Category = require('../../models/category.js')
 const record = require('../../models/record.js')
 
 router.get('/new', (req, res) => {
-  return res.render('new')
+  res.render('new')
 })
 
 router.post('/', (req, res) => {
-return Record.create(req.body)
-         .then(() => res.redirect('/'))
-         .catch(error => console.log(error))
+  const newData = req.body
+  const userId = req.user._id
+Record.create(Object.assign({ userId }, newData))
+  .then(() => res.redirect('/'))
+  .catch(error => console.log(error))
 })
 
 router.get('/:id/edit', (req, res) => {
-  const id = req.params.id
-  return Record.findById(id).lean()
+  const userId = req.user._id
+  const _id = req.params.id
+  return Record.findOne({ userId, _id }).lean()
            .then(record => {
              record.date = record.date.toISOString().slice(0, 10)
              return record
@@ -26,9 +29,10 @@ router.get('/:id/edit', (req, res) => {
 })
 
 router.put('/:id', (req, res) => {
-  const id = req.params.id
+  const userId = req.user._id
+  const _id = req.params.id
   const editData = req.body
-  return Record.findById(id)
+  return Record.findOne({ userId, _id })
            .then(record => {
             record = Object.assign(record, editData)
             return record.save()
@@ -38,8 +42,9 @@ router.put('/:id', (req, res) => {
 })
 
 router.delete('/:id', (req, res) => {
-  const id = req.params.id
-  return Record.deleteOne({ _id: id })
+  const userId = req.user._id
+  const _id = req.params.id
+  return Record.deleteOne({ userId, _id })
            .then(() => res.redirect('/'))
            .catch(error => console.log(error))
 })
