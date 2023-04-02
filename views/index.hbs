@@ -8,15 +8,33 @@
   </div>
 
   <div class="category-filter d-flex justify-content-center" style="width: 35%;margin: 1rem auto;">
-    <form class="w-100" action="/search" method="GET">
-      <div class="dropdown w-100">
+    <form class="w-100 d-flex" action="/search" method="GET">
+      <div class="dropdown w-50 me-3">
         <select name="categorySelect" id="categorySelect" class="w-100" onchange="submit()">
-          <option value="--" {{#compare key '===' '--'}}selected{{/compare}}>類別</option>
-          <option value="house" {{#compare key '===' 'house'}}selected{{/compare}}>家居物業</option>
-          <option value="vehicle" {{#compare key '===' 'vehicle'}}selected{{/compare}}>交通出行</option>
-          <option value="entertainment" {{#compare key '===' 'entertainment'}}selected{{/compare}}>休閒娛樂</option>
-          <option value="food" {{#compare key '===' 'food'}}selected{{/compare}}>餐飲食品</option>
-          <option value="other" {{#compare key '===' 'other'}}selected{{/compare}}>其他</option>
+          <option value="--" {{#compare categorySelect '===' '--' }}selected{{/compare}}>類別</option>
+          <option value="house" {{#compare categorySelect '===' 'house' }}selected{{/compare}}>家居物業</option>
+          <option value="vehicle" {{#compare categorySelect '===' 'vehicle' }}selected{{/compare}}>交通出行</option>
+          <option value="entertainment" {{#compare categorySelect '===' 'entertainment' }}selected{{/compare}}>休閒娛樂</option>
+          <option value="food" {{#compare categorySelect '===' 'food' }}selected{{/compare}}>餐飲食品</option>
+          <option value="other" {{#compare categorySelect '===' 'other' }}selected{{/compare}}>其他</option>
+        </select>
+      </div>
+
+      <div class="dropdown w-50">
+        <select name="monthSelect" id="monthSelect" class="w-100" onchange="submit()">
+          <option value="--" {{#compare monthSelect '===' '--' }}selected{{/compare}}>月份</option>
+          <option value="1" {{#compare monthSelect '===' '1' }}selected{{/compare}}>1月</option>
+          <option value="2" {{#compare monthSelect '===' '2' }}selected{{/compare}}>2月</option>
+          <option value="3" {{#compare monthSelect '===' '3' }}selected{{/compare}}>3月</option>
+          <option value="4" {{#compare monthSelect '===' '4' }}selected{{/compare}}>4月</option>
+          <option value="5" {{#compare monthSelect '===' '5' }}selected{{/compare}}>5月</option>
+          <option value="6" {{#compare monthSelect '===' '6' }}selected{{/compare}}>6月</option>
+          <option value="7" {{#compare monthSelect '===' '7' }}selected{{/compare}}>7月</option>
+          <option value="8" {{#compare monthSelect '===' '8' }}selected{{/compare}}>8月</option>
+          <option value="9" {{#compare monthSelect '===' '9' }}selected{{/compare}}>9月</option>
+          <option value="10" {{#compare monthSelect '===' '10' }}selected{{/compare}}>10月</option>
+          <option value="11" {{#compare monthSelect '===' '11' }}selected{{/compare}}>11月</option>
+          <option value="12" {{#compare monthSelect '===' '12' }}selected{{/compare}}>12月</option>
         </select>
       </div>
     </form>
@@ -24,13 +42,13 @@
 
   <div class="total-amount d-flex justify-content-center" style="width: 35%; margin: 1rem auto;">
     <div class="wrapper d-flex w-100">
-      <div class="total-amount-title" style="flex-basis: 30%;">
+      <div class="total-amount-title" style="width: 30%;">
         <span style="font-size: 1.7rem; font-weight: bold;">
           總金額：
         </span>
       </div>
 
-      <div class="total-amount-number" style="flex-basis: 60%;">
+      <div class="total-amount-number" style="width: 60%;">
         <span style="font-size: 4rem; font-weight: bold; color: #E4885B; margin-left: 1.5rem;">
           {{totalAmount}}
         </span>
@@ -77,7 +95,8 @@
               </div>
 
               <div class="button-wrapper" style="width: 24%;">
-                <a href="/records/{{this._id}}/edit" class="btn btn-success"><i class="fa-solid fa-pen-to-square"></i></a>
+                <a href="/records/{{this._id}}/edit" class="btn btn-success"><i
+                    class="fa-solid fa-pen-to-square"></i></a>
                 <a href="" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal{{this._id}}"><i
                     class="fa-solid fa-trash-can"></i></a>
               </div>
@@ -86,27 +105,28 @@
         </tr>
 
         <!-- Modal -->
-        <div class="modal fade" id="deleteModal{{this._id}}" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal fade" id="deleteModal{{this._id}}" tabindex="-1" aria-labelledby="ModalLabel"
+          aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-        
+
               <div class="align-self-end mt-3 me-3">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-        
+
               <div class="modal-body text-center my-4">
                 <h1>
                   刪除 『{{this.name}}』 紀錄 ?
                 </h1>
               </div>
-        
+
               <div class="align-self-end mb-4 me-4">
                 <form action="/records/{{this._id}}?_method=DELETE" method="POST" style="display: inline;">
                   <button type="submit" class="btn btn-danger me-3">Yes</button>
                 </form>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
               </div>
-        
+
             </div>
           </div>
         </div>
@@ -119,6 +139,6 @@
 
 
 
-  
+
 
 </div>
